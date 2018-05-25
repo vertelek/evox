@@ -1,0 +1,24 @@
+{
+  "name": "evox",
+  "version": "1.0.0",
+  "description": "Zadanie rekrutacyjne Frontend EVOX",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vertelek/evox.git"
+  },
+  "author": "Vitalii Andrusiak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vertelek/evox/issues"
+  },
+  "homepage": "https://github.com/vertelek/evox#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  }
+}
