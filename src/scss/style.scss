@@ -12,6 +12,8 @@ $background: #ffffff;
 $font-color: #333333;
 $button: #42a5f5;
 $button-text: #ffffff;
+$border: #e5e5e5;
+$text: #ffffff;
 
 /* Fonts */
 
@@ -89,13 +91,13 @@ body {
     display: inline-block;
     width: 210px;
     height: 250px;
-    border: 2px solid #e5e5e5;
+    border: 2px solid $border;
     border-radius: 4px;
-    box-shadow: 0 0 10px 5px #e5e5e5;
+    box-shadow: 0 0 10px 5px $border;
     .diagram-title {
       margin: 0;
       padding: 10px 10px 7px 10px;
-      border-bottom: 2px solid #e5e5e5;
+      border-bottom: 2px solid $border;
     }
     #pie-chart {
       position: relative;
@@ -120,62 +122,133 @@ body {
   margin: 100px 49px;
   padding: 20px;
   background: #e3f2fd;
+  #form {
+    label {
+      margin-bottom: 10px;
+    }
+    .red-star::after {
+      content: '*';
+      margin-left: 5px;
+      color: #e53935;
+    }
+    input {
+      display: block;
+      width: 240px;
+      margin-bottom: 20px;
+      padding: 5px;
+      border-radius: 3px;
+      outline: none;
+      border: none;
+    }
+    #form-btn {
+      padding: 7px 10px 7px 10px;
+      margin-top: 10px;
+      color: $text;
+      background: #1565c0;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+    }
+  }
 }
 
-#form label {
-  margin-bottom: 10px;
+.display-shadow {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 3, 3, 0.3); 
 }
 
-#form .red-star::after {
-  content: '*';
-  margin-left: 5px;
-  color: #e53935;
+.cat-modal {
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+  transition: all 0.3s;
+    .cat-display {
+      padding: 1px 20px 0 20px;
+      width: 300px;
+      height: 200px;
+      position: relative;
+      top: -100px;
+      left: -150px;
+      background: $border;
+        #modal-close {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          font-size: 18px;
+          background: none;
+          border: none;
+          outlone: none;  
+        }
+        .inpt {
+          margin-top: 39px;
+          label {
+            margin-bottom: 10px;
+          }
+          input {
+            display: block;
+            width: 296px;
+            margin-bottom: 20px;
+          }
+        }
+        #btn_cat {
+          background: $button;
+          padding: 5px 15px;
+          border: none;
+          outlone: none;
+          border-radius: 5px;
+        }
+    }
 }
 
-#form input {
-  display: block;
-  width: 240px;
-  margin-bottom: 20px;
-  padding: 5px;
-  border-radius: 3px;
-  outline: none;
-  border: none;
-}
-
-#form #form-btn {
-  padding: 7px 10px 7px 10px;
-  margin-top: 10px;
-  color: #ffffff;
-  background: #1565c0;
-  outline: none;
-  border: none;
-  border-radius: 5px;
+.cat-modal-active {
+  top: 50%;
 }
 
 #add_cat {
   margin: 50px;
   padding: 7px 10px 7px 10px;
   margin-top: 10px;
-  color: #ffffff;
+  color: $text;
   background: #1565c0;
   outline: none;
   border: none;
   border-radius: 5px;
 }
 
+.cat-list {
+  margin: 0 0 50px 30px;
+  p {
+    display: inline-block;
+  }
+  #miaucz {
+    margin-left: 20px;
+    padding: 7px 10px 7px 10px;
+    background: #1565c0;
+    outline: none;
+    border: none;
+    color: $button-text;
+    border-radius: 5px;
+  }
+}
+
 table {
   margin: 50px;
   width: 580px;
-  border: 1px solid #333333;
-  border-top: 30px solid #333333;
+  border: 1px solid $font-color;
+  border-top: 30px solid $font-color;
   border-collapse: collapse;
-}
-
-table tr {
-  border: 1px solid #333333;
-}
-
-table td {
-  padding: 5px;
-  border: 1px solid #333333;
+  tr {
+    border: 1px solid $font-color;
+  }
+  td {
+    padding: 5px;
+    border: 1px solid $font-color;
+  }
 }

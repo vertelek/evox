@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
+var cleanCSS = require('gulp-clean-css');
 
 gulp.task('default', function() {
   console.log("Hello");
@@ -10,6 +11,7 @@ gulp.task('default', function() {
 gulp.task('sass', function() {
     return gulp.src("src/scss/*.scss")
         .pipe(sass())
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });

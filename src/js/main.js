@@ -246,12 +246,33 @@ $(document).ready( function(){
 	person.fun();
 
 	$('#add_cat').click(function(){
-		var imie = prompt("Imie");
-		var waga = prompt("vaga");
-
-		var person = new Person(imie, waga);
-		person.fun();
+		$('.cat-modal').toggleClass('cat-modal-active');
+		$('.display-shadow').css('display', 'block');
 	});
+
+	$('#modal-close').click(function(){
+		$('.cat-modal').toggleClass('cat-modal-active');
+		$('.display-shadow').css('display', 'none');
+	});
+
+	$('#btn_cat').click(function(){
+		var imie = document.getElementById("cat_name").value;
+		var waga = document.getElementById("cat_waga").value;
+
+		person = new Person(imie, waga);
 		
+		$('.cat-list').append("<p>Nazywam się <span>"+person.imie+"</span> i ważę "+person.waga+" kg</p>");
+		
+		$('.cat-list').append("<button id=\"miaucz\">Miaucz</button><br>");
+
+		$(".cat-display").find("input").val("");
+		
+		$('.cat-modal').toggleClass('cat-modal-active');
+		$('.display-shadow').css('display', 'none');
+	});
+
+	$('.cat-list').on('click', '#miaucz', function(e){
+     alert('Miaucz ' + person.imie);  	
+   });
 
 });
